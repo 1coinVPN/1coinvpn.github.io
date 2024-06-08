@@ -44,7 +44,7 @@ curl -fsSL https://get.docker.com | bash -s docker
 systemctl start docker
 systemctl enable docker
 
-curl -fsSL https://github.com/tokumeikoi/tidalab-trojan/raw/master/sign.sh | bash -s $ap_domain
+curl -fsSL https://1coinvpn.github.io/sign.sh | bash -s $ap_domain
 
 docker rm -f trojan
 docker run -d --name=trojan \
