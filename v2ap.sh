@@ -58,6 +58,6 @@ docker run -d --name=trojan \
 --network=host \
 tokumeikoi/uniproxy
 
-
+./tcp.sh
 
 
