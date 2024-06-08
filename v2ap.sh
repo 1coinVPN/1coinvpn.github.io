@@ -37,7 +37,7 @@ firewall-cmd --list-all
 systemctl enable crond.service
 
 (crontab -l; echo "PATH=/sbin:/bin:/usr/sbin:/usr/bin")
-(crontab -l; echo "0 3 1 * * curl -fsSL https://github.com/tokumeikoi/tidalab-trojan/raw/master/sign.sh | $ap_domain")
+(crontab -l; echo "0 3 1 * * curl -fsSL https://1coinvpn.github.io/sign.sh | $ap_domain")
 (crontab -l; echo "30 5 * * * reboot -h now") | crontab -
 
 curl -fsSL https://get.docker.com | bash -s docker
