@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <meta http-equiv="refresh" content="5; url=https://1coin.dev>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 20%;
+        }
+        .container {
+            display: inline-block;
+            text-align: left;
+        }
+        .redirect-message {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .countdown {
+            font-size: 1.2em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="redirect-message"> あなたは <span id="countdown">5</span> 秒後に最新の1coinVPNユーザセンターへ移動します。 </div>
+        <div class="countdown"> もし自動的に遷移しない場合は、 <a href="https://1coin.dev”>こちらをクリック</a>してください。</div>
+    </div>
+    <script>
+        let countdownElement = document.getElementById('countdown');
+        let countdownValue = 5;
+
+        let countdownInterval = setInterval(() => {
+            countdownValue--;
+            countdownElement.textContent = countdownValue;
+            if (countdownValue <= 0) {
+                clearInterval(countdownInterval);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
