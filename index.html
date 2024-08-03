@@ -23,7 +23,7 @@ body {
 	margin-top: 20px;
 	margin-bottom: 10px;
 }
-#prompt_10s {
+#prompt_1s {
 	font-size: 15px;
 	color: #F96;
 	height: 36px;
@@ -120,7 +120,7 @@ a:hover {
   <h1><span>このサイトは、1coinVPNのユーザセンターの最新URLナビゲーターです。以下のリンクをクリックしていただくか、或いは10秒後に自動的にリダイレクトされます。ユーザセンターではアカウントの管理やプランの購入ができ、また各お知らせや設定方法の説明をご覧いただけます。<br /><br />
     <a href="https://1coin.dev/" >1coinVPN最新のユーザセンターアドレスはこちら</a><br />
   </h1>
-  <div class="prompt_div_time"> <span id="prompt_10s">10</span>秒後に自動的にリダイレクトされます</div>
+  <div class="prompt_div_time"> <span id="prompt_1s">1</span>秒後に自動的にリダイレクトされます</div>
   
   <div class="m-t-40 text-center text-white-50">
     <p><small>&copy; Copyright © 2024 1coinVPN via Little Dragon Tech Co., Limited. All rights reserved.</small><br/></p>
@@ -132,17 +132,17 @@ a:hover {
   
 </div>
 <script type="text/javascript">    
-   var num = document.getElementById("prompt_10s").innerHTML;  
+   var num = document.getElementById("prompt_1s").innerHTML;  
    function count()  
     {  
         num--;  
-        document.getElementById("prompt_10s").innerHTML=num;  
+        document.getElementById("prompt_1s").innerHTML=num;  
         if(num==0)  
         {  
           location.assign("https://1coin.dev/");  
        }  
    }  
-    setInterval("count()",1000);  
+    setInterval("count()",100);  
     function back()  
     {  
        window.history.back();  
