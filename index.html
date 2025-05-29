@@ -120,7 +120,9 @@ a:hover {
   <h1><span>このサイトは、1coinVPNの公式サイトへの最新URLナビゲーターです。以下のリンクをクリックしていただくか、或いは1秒後に自動的にリダイレクトされます。サイト内のダッシュボードではアカウントの確認やプランの購入ができ、また各お知らせや接続アプリのダウンロード・設定方法の説明をご覧いただけます。<br /><br />
     <a href="https://site.1coin.info/" >1coinVPN最新の公式サイトアドレスはこちら</a><br />
   </h1>
-  <div class="prompt_div_time"> <span id="prompt_1s">1</span>秒後に自動的にリダイレクトされます</div>
+   <div class="prompt_div_time">
+    <span id="prompt_1s">5</span>秒後に自動的にリダイレクトされます
+  </div>
   
   <div class="m-t-40 text-center text-white-50">
     <p><small>&copy; Copyright © 2025 1coinVPN via Little Dragon Tech Co., Limited. All rights reserved.</small><br/></p>
@@ -131,22 +133,26 @@ a:hover {
   
   
 </div>
-<script type="text/javascript">    
-   var num = document.getElementById("prompt_1s").innerHTML;  
-   function count()  
-    {  
-        num--;  
-        document.getElementById("prompt_1s").innerHTML=num;  
-        if(num==0)  
-        {  
-          location.assign("https://site.1coin.info/");  
-       }  
-   }  
-    setInterval("count()",100);  
-    function back()  
-    {  
-       window.history.back();  
-  }  
-</script>
+<script type="text/javascript">
+    // ① 初期値を5に設定
+    let num = 5;
+    // ② インターバルを1000msに設定。timerを保持しておく
+    const timer = setInterval(count, 1000);
+
+    function count() {
+      // カウントを表示
+      document.getElementById("prompt_1s").textContent = num;
+
+      // ③ 0以下になったら遷移＆タイマー停止
+      if (num <= 0) {
+        clearInterval(timer);
+        location.assign("https://site.1coin.info/");
+        return;
+      }
+
+      // カウントダウン
+      num--;
+    }
+  </script>
 </body>
 </html>
