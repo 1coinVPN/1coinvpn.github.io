@@ -1,172 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>1coinVPN 最新URLナビゲーションサイト</title>
-<style type="text/css">
-body {
-	magin: 0px;
-	font-family: "Arial";
-	background-color: #eaf4ec;
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>1coinVPN</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="logo64.webp">
+<!-- JS が無効でも必ず移動する。中国の一部ブラウザ対策 -->
+<meta http-equiv="refresh" content="4;url=https://site.jurentp.com/">
+<style>
+/* ダッシュボード(site.jurentp.com)と同じ配色に揃えている。
+   背景=濃紺 #0a0e1a / アクセント=青 #2f6df6。
+   ★重い処理(blur・drop-shadow・無限アニメ)は入れない。中国の回線と端末で軽く出すため★ */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden}
+body{
+  background:#0a0e1a;color:#e8ecf4;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",YuGothic,"Noto Sans JP",Meiryo,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  /* 静的なグラデーション。blur を使わないので描画が軽い */
+  background-image:radial-gradient(circle at 50% 44%,#16224a 0%,#0d1226 42%,#0a0e1a 72%);
 }
-.prompt_div_time {
-	font-size: 15px;
-	color: #B0B0B0;
-	width: 260px;
-	margin-right: auto;
-	margin-left: auto;
-	height: 36px;
-	background-color: #F1F1F1;
-	line-height: 36px;
-	border-radius: 20px;
-	text-align: center;
-	margin-top: 20px;
-	margin-bottom: 10px;
-}
-#prompt_1s {
-	font-size: 15px;
-	color: #F96;
-	height: 36px;
-	line-height: 36px;
-	margin-right: 10px;
-	font-weight: bold;
-}
-a:link,a:visited {
-	color: #318a46;
-	text-decoration: none;
-	font-weight: bold;
-}
-a:hover {
-	text-decoration: underline;
-	color: #318a46;
-}
+.brand{position:fixed;left:32px;top:26px;display:flex;align-items:center;gap:10px}
+.brand img{width:30px;height:30px;border-radius:8px;display:block}
+.brand span{font-size:15px;font-weight:700;letter-spacing:.04em}
 
-.frame_style {
-	margin-top: 60px;
-	margin-right: auto;
-	margin-left: auto;
-	width: auto;
-}
-.ok {
-	width: 700px;
-	margin:136px auto;
-	padding-top: 40px;
-	border: 3px solid #318a46;
-	padding-bottom: 40px;
-	border-radius: 20px;
-	background-color: #FFF;
-	display: block;
-}
-.ok h1 {
-	font-size: 16px;
-	line-height: 23px;
-	color: #333;
-	text-align: center;
-	font-weight: normal;
-	clear: both;
-	margin-bottom: 10px;
-	padding: 10px;
-}
-.ok h2 {
-	font-weight: normal;
-	line-height: 20px;
-	font-size: 12px;
-	text-align: center;
-	color: #999;
-	padding: 0px;
-	margin: 0px;
-}
-.ok button {
-	font-size: 13px;
-	line-height: 26px;
-	width: 100px;
-	margin-right: 10px;
-	margin-left: 10px;
-	background-color: #99CC66;
-	border-top-style: none;
-	border-right-style: none;
-	border-bottom-style: none;
-	border-left-style: none;
-	color: #FFF;
-	font-family: "Arial";
-}
-.ok button:hover {
-	background-color: #FFCC66;
-	color: #C60;
-}
-.ok p {
-	margin-right: auto;
-	margin-left: auto;
-	width: 500px;
-}
-.ok h3 {
-	font-size: 13px;
-	color: #333;
-	margin: 0px;
-	padding: 0px;
-	text-align: center;
-	line-height: 50px;
-	font-weight: normal;
-}
-.ok h1 span {
-	font-size: 24px;
-	line-height: 40px;
-}
-</style>  
+.stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+.earth{width:min(58vmin,400px);height:auto;display:block;opacity:.96;
+  animation:in .9s ease-out both}
+@keyframes in{from{opacity:0;transform:scale(.94)}to{opacity:.96;transform:none}}
+
+.load{position:fixed;left:0;right:0;bottom:13%;text-align:center}
+.load p{font-size:11px;font-weight:600;letter-spacing:.44em;color:#8ea0c0;
+  text-indent:.44em;margin-bottom:12px}
+.bar{width:min(190px,50vw);height:2px;margin:0 auto;border-radius:99px;background:#ffffff1c;overflow:hidden}
+.bar b{display:block;height:100%;width:0;border-radius:99px;
+  background:linear-gradient(90deg,#2f6df6,#5b9dff);animation:fill 3.6s linear forwards}
+@keyframes fill{to{width:100%}}
+
+.go{position:fixed;left:0;right:0;bottom:5.4%;text-align:center;
+  font-size:11.5px;color:#5b6a86;text-decoration:none;letter-spacing:.05em}
+.go:hover,.go:focus{color:#8fb4ff}
+
+@media(max-width:520px){.brand{left:20px;top:18px}.earth{width:70vmin}.load{bottom:15%}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}.earth{opacity:.96}}
+</style>
 </head>
 <body>
-<div class="ok">
-  <div style="width:100px; margin:auto;"><img src="logo.png" width="100" height="100" /></div>
-  <h1><span>🛰️ 1coinVPN – 中国の規制を受けずに、いつでも快適ネット<br /><br />
-ワンコイン（500円）で手に入る、安心・高速・自由<br />
-日系VPNとして唯一、全サーバで中国ネット規制を受けない専用線採用<br />
-Xで話題、信頼の品質で世界とつながる自由を<br />
-中国内での設定・決済にも対応し、海外で闘う日本人をサポートします<br /><br />
-	  🌐 こちらは1coinVPN公式サイト（ダッシュボード）へのリダイレクト専用ページです<br /><br />
-	  アクセス先URLは、中国のネット規制状況に応じて随時更新されます。<br />
-	  このページをブックマークしておくと、常に最新の公式サイトへアクセスできます。<br /><br />
-	  🔒 ダッシュボードでできること<br /><br />
-		•アカウントの新規登録（2週間の無料お試し開始）<br />
-		•プランの購入・状態確認<br />
-		•お知らせ・メンテナンス情報の閲覧<br />
-		•接続アプリのダウンロード・設定ガイド参照<br />
-	  📍 最新の公式サイトURLはこちら<br /><br />
-    <a href="https://site.jurentp.com/" >1coinVPN公式サイト（ダッシュボード）へアクセス</a><br />
-	  （※規制状況によりURLは随時変更されます）<br /><br />
-  </h1>
-   <div class="prompt_div_time">
-    <span id="prompt_1s">5</span>秒後にリダイレクトされます
-  </div>
-  
-  <div class="m-t-40 text-center text-white-50">
-    <p><small>&copy; Copyright © 2026 1coinVPN via LITTLE DRAGON TECH CO., LIMITED. All rights reserved.</small><br/></p>
+<div class="brand"><img src="logo64.webp" width="30" height="30" alt=""><span>1coinVPN</span></div>
+
+<div class="stage"><img class="earth" src="earth.webp" width="400" height="400" alt="1coinVPN" fetchpriority="high"></div>
+
+<div class="load">
+  <p>LOADING</p>
+  <div class="bar"><b></b></div>
 </div>
 
-  
-  
-  
-  
-</div>
-<script type="text/javascript">
-    // ① 初期値を5に設定
-    let num = 5;
-    // ② インターバルを1000msに設定。timerを保持しておく
-    const timer = setInterval(count, 1000);
+<a class="go" id="go" href="https://site.jurentp.com/">移動しない場合はこちら</a>
 
-    function count() {
-      // カウントを表示
-      document.getElementById("prompt_1s").textContent = num;
-
-      // ③ 0以下になったら遷移＆タイマー停止
-      if (num <= 0) {
-        clearInterval(timer);
-        location.assign("https://site.jurentp.com/");
-        return;
-      }
-
-      // カウントダウン
-      num--;
-    }
-  </script>
+<script>
+/* ★移動先はここだけ書き換える。規制でURLが変わったらこの1行のみ直せばよい★ */
+var DEST = "https://site.jurentp.com/";
+document.getElementById("go").href = DEST;
+document.querySelector('meta[http-equiv="refresh"]').content = "4;url=" + DEST;
+setTimeout(function () { location.replace(DEST); }, 1600);
+</script>
 </body>
 </html>
